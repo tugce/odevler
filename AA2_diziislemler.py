@@ -65,6 +65,27 @@ if __name__ == '__main__':
     t1 = time()
     print 'kEleman sure = %f' % (t1-t0)
     a = []
+    diziBoyutu = input('Kac boyutlu dizi olsun? ')
+    #diziboyutu elemanlý dizi zamanlarý
+    for i in range(diziBoyutu):
+        x = int(random.uniform(-100, 100))
+        a.append(x)
+    t0 = time()
+    print maxEleman(a)
+    t1 = time()
+    print 'diziboyutu maxEleman zaman = %f' %(t1-t0)
+    t0 = time()
+    print maxElemanMerge(a)
+    t1 = time()
+    print 'diziboyutu maxElemanMerge zaman = %f' %(t1-t0)
+    k = raw_input('Dizinin kaçýncý elemanýný istiyorsunuz? ')
+    k = int(k)
+    t0 = time()
+    print kEleman(a,k)
+    t1 = time()
+    print 'diziboyutu kEleman zaman = %f' %(t1-t0)
+
+    a = []
     #50 elemanlý dizi zamanlarý
     for i in range(50):
         x = int(random.uniform(-100, 100))
@@ -153,3 +174,21 @@ if __name__ == '__main__':
     print kEleman(a,5)
     t1 = time()
     print '100.000 kEleman zaman = %f' %(t1-t0)
+
+    a = []
+    #1000000 elemanlý dizi zamanlarý
+    for i in range(1000000):
+        x = int(random.uniform(-100, 100))
+        a.append(x)
+    t0 = time()
+    print maxEleman(a)
+    t1 = time()
+    print '1.000.000 maxEleman zaman = %f' %(t1-t0)
+    t0 = time()
+    print maxElemanMerge(a)
+    t1 = time()
+    print '1.000.000 maxElemanMErge zaman = %f' %(t1-t0)
+    t0 = time()
+    print kEleman(a,5)
+    t1 = time()
+    print '1.000.000 kEleman zaman = %f' %(t1-t0)
