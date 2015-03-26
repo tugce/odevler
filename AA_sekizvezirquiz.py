@@ -37,44 +37,38 @@ def test(tablo):
                         conf = 'sutun (%d %d) (%d %d) \n' %(i,j,i,m)
                         conflictFirst.append(conf)
             if(tablo[i][j] == 1):
-                if(solCaprazKontrol == False):
-                    solCaprazKontrol = True
-                    soliy = i
-                    soljy = j
-                    solia = i
-                    solja = j
-                    for n in range(0,8):
-                        if(soliy != 0 or soljy!= 0):
-                            soliy = soliy -1
-                            soljy = soljy -1
-                            if(tablo[soliy][soljy] == 1):
-                                conf = ' sol capraz(%d %d) (%d %d) \n' %(i,j,soliy,soljy)
-                                conflictFirst.append(conf)
-                        elif(solia != 7 or solja != 7):
-                            solia = solia + 1
-                            solja = solja + 1
-                            if(tablo[solia][solja] == 1):
-                                conf = ' sol capraz(%d %d) (%d %d) \n' %(i,j,solia,solja)
-                                conflictFirst.append(conf)  
-                if(sagCaprazKontrol == False):
-                    sagCaprazKontrol = True
-                    sagiy = i
-                    sagjy = j
-                    sagia = i
-                    sagja = j
-                    for n in range(0,8):
-                        if(sagiy != 0 and sagjy!= 7):
-                            sagiy = sagiy -1
-                            sagjy = sagjy +1
-                            if(tablo[sagiy][sagjy] == 1):
-                                conf = ' sag capraz(%d %d) (%d %d) \n' %(i,j,sagiy,sagjy)
-                                conflictFirst.append(conf)
-                        elif(sagia != 7 and sagja!= 0):
-                            sagia = sagia +1
-                            sagja = sagja -1
-                            if(tablo[sagia][sagja] == 1):
-                                conf = ' sag capraz(%d %d) (%d %d) \n' %(i,j,sagia,sagja)
-                                conflictFirst.append(conf)
+                solCAsagii = i
+                solCAsagij = j
+                while(solCAsagii != 7 and solCAsagij != 7):
+                    solCAsagii = solCAsagii + 1
+                    solCAsagij = solCAsagij + 1
+                    if(tablo[solCAsagii][solCAsagij] == 1):
+                        conf = ' sol capraz(%d %d) (%d %d) \n' %(i,j,solCAsagii,solCAsagij)
+                        conflictFirst.append(conf)
+                solCYukarii = i
+                solCYukarij = j
+                while(solCYukarij != 0):
+                    solCYukarii = solCYukarii - 1
+                    solCYukarij = solCYukarij - 1
+                    if(tablo[solCYukarii][solCYukarij] == 1):
+                        conf = ' sol capraz(%d %d) (%d %d) \n' %(i,j,sagCAsagii,solCYukarij)
+                        conflictFirst.append(conf)
+                sagCAsagii = i
+                sagCAsagij = j
+                while(sagCAsagii != 7 and sagCAsagij != 0):
+                    sagCAsagii = sagCAsagii + 1
+                    sagCAsagij = sagCAsagij - 1
+                    if(tablo[sagCAsagii][sagCAsagij] == 1):
+                        conf = ' sag capraz(%d %d) (%d %d) \n' %(i,j,sagCAsagii,sagCAsagij)
+                        conflictFirst.append(conf)
+                sagCYukarii = i
+                sagCYukarij = j
+                while(sagCYukarii != 0 and sagCYukarij != 7):
+                    sagCYukarii = sagCYukarii - 1
+                    sagCYukarij = sagCYukarij + 1
+                    if(tablo[sagCYukarii][sagCYukarij] == 1):
+                        conf = ' sag capraz(%d %d) (%d %d) \n' %(i,j,sagCYukarii,sagCYukarij)
+                        conflictFirst.append(conf)
     for i in range(0, len(conflictFirst)):
         print conflictFirst[i]
     
