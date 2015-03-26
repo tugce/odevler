@@ -24,10 +24,8 @@ def create():
 def test(tablo):
     conflictFirst = []
     conflictSecond = []
+    sutunKontrol = False
     for i in range(0,8):
-        sutunKontrol = False
-        solCaprazKontrol = False
-        sagCaprazKontrol = False
         for j in range(0,8):
             if(tablo[i][j] == 1):
                 if(sutunKontrol == True): continue
@@ -36,6 +34,9 @@ def test(tablo):
                     if(tablo[i][m] == 1 and m != j):
                         conf = 'sutun (%d %d) (%d %d) \n' %(i,j,i,m)
                         conflictFirst.append(conf)
+            
+    for i in range(0,8):
+        for j in range(0,8):
             if(tablo[i][j] == 1):
                 solCAsagii = i
                 solCAsagij = j
@@ -47,28 +48,30 @@ def test(tablo):
                         conflictFirst.append(conf)
                 solCYukarii = i
                 solCYukarij = j
-                while(solCYukarij != 0):
+                while(solCYukarij != 0 and solCYukarii != 0):
                     solCYukarii = solCYukarii - 1
                     solCYukarij = solCYukarij - 1
                     if(tablo[solCYukarii][solCYukarij] == 1):
-                        conf = ' sol capraz(%d %d) (%d %d) \n' %(i,j,sagCAsagii,solCYukarij)
+                        conf = ' sol capraz(%d %d) (%d %d) \n' %(i,j,solCYukarii,solCYukarij)
                         conflictFirst.append(conf)
-                sagCAsagii = i
-                sagCAsagij = j
-                while(sagCAsagii != 7 and sagCAsagij != 0):
-                    sagCAsagii = sagCAsagii + 1
-                    sagCAsagij = sagCAsagij - 1
-                    if(tablo[sagCAsagii][sagCAsagij] == 1):
-                        conf = ' sag capraz(%d %d) (%d %d) \n' %(i,j,sagCAsagii,sagCAsagij)
-                        conflictFirst.append(conf)
-                sagCYukarii = i
-                sagCYukarij = j
-                while(sagCYukarii != 0 and sagCYukarij != 7):
-                    sagCYukarii = sagCYukarii - 1
-                    sagCYukarij = sagCYukarij + 1
-                    if(tablo[sagCYukarii][sagCYukarij] == 1):
-                        conf = ' sag capraz(%d %d) (%d %d) \n' %(i,j,sagCYukarii,sagCYukarij)
-                        conflictFirst.append(conf)
+    for i in range(0,8):
+        for j in range(0,8):
+            sagCAsagii = i
+            sagCAsagij = j
+            while(sagCAsagii != 7 and sagCAsagij != 0):
+                sagCAsagii = sagCAsagii + 1
+                sagCAsagij = sagCAsagij - 1
+                if(tablo[sagCAsagii][sagCAsagij] == 1):
+                    conf = ' sag capraz(%d %d) (%d %d) \n' %(i,j,sagCAsagii,sagCAsagij)
+                    conflictFirst.append(conf)
+            sagCYukarii = i
+            sagCYukarij = j
+            while(sagCYukarii != 0 and sagCYukarij != 7):
+                sagCYukarii = sagCYukarii - 1
+                sagCYukarij = sagCYukarij + 1
+                if(tablo[sagCYukarii][sagCYukarij] == 1):
+                    conf = ' sag capraz(%d %d) (%d %d) \n' %(i,j,sagCYukarii,sagCYukarij)
+                    conflictFirst.append(conf)
     for i in range(0, len(conflictFirst)):
         print conflictFirst[i]
     
