@@ -29,7 +29,7 @@ def maxSubSum2(a):
                 maxSum = thisSum
                 seqStart = i
                 seqEnd = j
-    return maxSum
+    return {'y0':maxSum, 'y1':seqStart ,'y2':seqEnd }
 
 def maxSubSum4(a):
     seqStart = 0
@@ -46,7 +46,7 @@ def maxSubSum4(a):
         elif(thisSum < 0):
             i = j + 1
             thisSum = 0
-    return maxSum
+    return {'y0':maxSum, 'y1':seqStart ,'y2':seqEnd }
 
 if __name__ == '__main__':
     #10 elemanlý dizi zamanlarý
@@ -55,16 +55,22 @@ if __name__ == '__main__':
     maxSum = maxSubSum1(a)
     t1 = time()
     print 'maxSum1 = %d' % maxSum['y0']
+    print 'maxSum1 seqStart = %d' % maxSum['y1']
+    print 'maxSum1 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum1 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum2(a)
     t1 = time()
-    print 'maxSum2 = %d' % maxSum
+    print 'maxSum2 = %d' % maxSum['y0']
+    print 'maxSum2 seqStart = %d' % maxSum['y1']
+    print 'maxSum2 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum2 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum4(a)
     t1 = time()
-    print 'maxSum4 = %d' % maxSum
+    print 'maxSum4 = %d' % maxSum['y0']
+    print 'maxSum4 seqStart = %d' % maxSum['y1']
+    print 'maxSum4 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum4 zaman = %f' %(t1-t0)
 
     a = []
@@ -76,16 +82,22 @@ if __name__ == '__main__':
     maxSum = maxSubSum1(a)
     t1 = time()
     print 'maxSum1 = %d' % maxSum['y0']
+    print 'maxSum1 seqStart = %d' % maxSum['y1']
+    print 'maxSum1 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum1 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum2(a)
     t1 = time()
-    print 'maxSum2 = %d' % maxSum
+    print 'maxSum2 = %d' % maxSum['y0']
+    print 'maxSum2 seqStart = %d' % maxSum['y1']
+    print 'maxSum2 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum2 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum4(a)
     t1 = time()
-    print 'maxSum4 = %d' % maxSum
+    print 'maxSum4 = %d' % maxSum['y0']
+    print 'maxSum4 seqStart = %d' % maxSum['y1']
+    print 'maxSum4 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum4 zaman = %f' %(t1-t0)
     a = []
     #100 elemanlý dizi oluþturalým
@@ -96,16 +108,22 @@ if __name__ == '__main__':
     maxSum = maxSubSum1(a)
     t1 = time()
     print 'maxSum1 = %d' % maxSum['y0']
+    print 'maxSum1 seqStart = %d' % maxSum['y1']
+    print 'maxSum1 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum1 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum2(a)
     t1 = time()
-    print 'maxSum2 = %d' % maxSum
+    print 'maxSum2 = %d' % maxSum['y0']
+    print 'maxSum2 seqStart = %d' % maxSum['y1']
+    print 'maxSum2 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum2 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum4(a)
     t1 = time()
-    print 'maxSum4 = %d' % maxSum
+    print 'maxSum4 = %d' % maxSum['y0']
+    print 'maxSum4 seqStart = %d' % maxSum['y1']
+    print 'maxSum4 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum4 zaman = %f' %(t1-t0)
     a = []
     #500 elemanlý dizi oluþturalým
@@ -116,16 +134,22 @@ if __name__ == '__main__':
     maxSum = maxSubSum1(a)
     t1 = time()
     print 'maxSum1 = %d' % maxSum['y0']
+    print 'maxSum1 seqStart = %d' % maxSum['y1']
+    print 'maxSum1 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum1 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum2(a)
     t1 = time()
-    print 'maxSum2 = %d' % maxSum
+    print 'maxSum2 = %d' % maxSum['y0']
+    print 'maxSum2 seqStart = %d' % maxSum['y1']
+    print 'maxSum2 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum2 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum4(a)
     t1 = time()
-    print 'maxSum4 = %d' % maxSum
+    print 'maxSum4 = %d' % maxSum['y0']
+    print 'maxSum4 seqStart = %d' % maxSum['y1']
+    print 'maxSum4 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum4 zaman = %f' %(t1-t0)
         
     a = []
@@ -137,16 +161,22 @@ if __name__ == '__main__':
     maxSum = maxSubSum1(a)
     t1 = time()
     print 'maxSum1 = %d' % maxSum['y0']
+    print 'maxSum1 seqStart = %d' % maxSum['y1']
+    print 'maxSum1 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum1 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum2(a)
     t1 = time()
-    print 'maxSum2 = %d' % maxSum
+    print 'maxSum2 = %d' % maxSum['y0']
+    print 'maxSum2 seqStart = %d' % maxSum['y1']
+    print 'maxSum2 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum2 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum4(a)
     t1 = time()
-    print 'maxSum4 = %d' % maxSum
+    print 'maxSum4 = %d' % maxSum['y0']
+    print 'maxSum4 seqStart = %d' % maxSum['y1']
+    print 'maxSum4 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum4 zaman = %f' %(t1-t0)
     
 
@@ -159,16 +189,22 @@ if __name__ == '__main__':
     maxSum = maxSubSum1(a)
     t1 = time()
     print 'maxSum1 = %d' % maxSum['y0']
+    print 'maxSum1 seqStart = %d' % maxSum['y1']
+    print 'maxSum1 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum1 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum2(a)
     t1 = time()
-    print 'maxSum2 = %d' % maxSum
+    print 'maxSum2 = %d' % maxSum['y0']
+    print 'maxSum2 seqStart = %d' % maxSum['y1']
+    print 'maxSum2 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum2 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum4(a)
     t1 = time()
-    print 'maxSum4 = %d' % maxSum
+    print 'maxSum4 = %d' % maxSum['y0']
+    print 'maxSum4 seqStart = %d' % maxSum['y1']
+    print 'maxSum4 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum4 zaman = %f' %(t1-t0)
 
     a = []
@@ -180,14 +216,20 @@ if __name__ == '__main__':
     maxSum = maxSubSum1(a)
     t1 = time()
     print 'maxSum1 = %d' % maxSum['y0']
+    print 'maxSum1 seqStart = %d' % maxSum['y1']
+    print 'maxSum1 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum1 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum2(a)
     t1 = time()
-    print 'maxSum2 = %d' % maxSum
+    print 'maxSum2 = %d' % maxSum['y0']
+    print 'maxSum2 seqStart = %d' % maxSum['y1']
+    print 'maxSum2 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum2 zaman = %f' %(t1-t0)
     t0 = time()
     maxSum = maxSubSum4(a)
     t1 = time()
-    print 'maxSum4 = %d' % maxSum
+    print 'maxSum4 = %d' % maxSum['y0']
+    print 'maxSum4 seqStart = %d' % maxSum['y1']
+    print 'maxSum4 seqEnd = %d' % maxSum['y2']
     print 'maxSubSum4 zaman = %f' %(t1-t0)
