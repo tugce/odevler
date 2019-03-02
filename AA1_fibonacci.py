@@ -1,5 +1,4 @@
 from time import time
-
 def fibonacci_loop(counter):
     result = 1
     if(counter == 1 or counter == 2):
